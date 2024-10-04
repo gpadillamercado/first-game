@@ -10,8 +10,7 @@ int main(void){
     SetTargetFPS(60);
 
     // Test the Tile struct
-    struct Tile myTile;
-    int myDim = tile_row(&myTile);
+    Tile myTile;
 
     // Main loop
     while(!WindowShouldClose()) {
@@ -22,7 +21,7 @@ int main(void){
 
             ClearBackground(BLACK);
             
-            DrawText(TextFormat("Number of rows: %d", myDim), 10, 200, 20, LIGHTGRAY);
+            DrawText(TextFormat("Address: %p\n", &myTile), 10, 200, 20, LIGHTGRAY);
 
         EndDrawing();
     }
