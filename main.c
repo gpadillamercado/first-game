@@ -31,7 +31,7 @@ int main(void){
             
             DrawText(TextFormat("Address: %p\n", &myMap), 10, 20, 20, LIGHTGRAY);
 	    DrawText(TextFormat("Size: %d\n", sizeof(myMap)), 10, 60, 20, LIGHTGRAY);
-	    DrawText(TextFormat("TileType myTile: %i\n", myTile.type), 10, 80, 10, WHITE);
+	    DrawText(TextFormat("TileType myTile: %i\n", myMap[0][1].type), 10, 80, 10, WHITE);
 	    printTileMap(myMap, 4, 4);
         EndDrawing();
     }

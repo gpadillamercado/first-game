@@ -15,13 +15,14 @@ void setTileMap(Tile * tiles, TileType * types, int nrows, int ncols) {
 	}
     }
 }
+
 void printTileMap(Tile * tiles, int nrows, int ncols) {
     int i, j;
     int x = 0;
     int y = 0;
     for (i = 0; i < nrows; i++) {
 	for (j = 0; j < ncols; j++) {
-            DrawText(TextFormat("%u", (tiles[(ncols*j) + i]).type),
+            DrawText(TextFormat("%u", (tiles[(ncols*i) + j]).type),
 		    30 + x, 100 + y, 14, WHITE);
 	    x += 20; 
 	}
