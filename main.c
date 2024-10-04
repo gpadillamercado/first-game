@@ -1,6 +1,6 @@
 #include <raylib.h>
 #include <raymath.h>
-
+#include "weaver.h"
 
 int main(void){
     const int win_width = 500;
@@ -8,6 +8,10 @@ int main(void){
     //Here begins the main loop of the game
     InitWindow(win_width, win_height, "A test window");
     SetTargetFPS(60);
+
+    // Test the Tile struct
+    struct Tile myTile;
+    int myDim = tile_row(&myTile);
 
     // Main loop
     while(!WindowShouldClose()) {
@@ -18,7 +22,7 @@ int main(void){
 
             ClearBackground(BLACK);
             
-            DrawText("Congrats! Your first window!", 10, 200, 20, LIGHTGRAY);
+            DrawText(TextFormat("Number of rows: %d", myDim), 10, 200, 20, LIGHTGRAY);
 
         EndDrawing();
     }
