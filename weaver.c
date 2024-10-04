@@ -12,7 +12,7 @@ void push_col(struct Tile * this_tile, float angle, int flow, int tile_type) {
     head->right = malloc(sizeof(struct Tile));
     // Set the values
     head->right->x_coord = (*head).x_coord++;
-    head->right->y_coord = (*head).y_coord++;
+    head->right->y_coord = (*head).y_coord;
     head->right->angle = angle;
     head->right->flow = flow;
     head->right->tile_type = tile_type;
@@ -30,7 +30,7 @@ void push_row(struct Tile * this_tile, float angle, int flow, int tile_type) {
     // Allocates new memory to the bottom
     head->bottom = malloc(sizeof(struct Tile));
     // Set the values
-    head->bottom->x_coord = (*head).x_coord++;
+    head->bottom->x_coord = (*head).x_coord;
     head->bottom->y_coord = (*head).y_coord++;
     head->bottom->angle = angle;
     head->bottom->flow = flow;
