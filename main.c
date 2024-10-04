@@ -11,7 +11,15 @@ int main(void){
 
     // Test the Tile struct
     Tile myTile;
-
+    Tile myMap[4][4];
+    TileType levels[4][4] = {
+	{1, 2, 3, 4},
+	{0, 1, 2, 3},
+	{4, 0, 1, 2},
+	{3, 4, 0, 1}
+    };
+    setTileType(&myTile, &levels[0][1]); // expect TileType 2
+    setTileMap(myMap, levels, 4, 4);
     // Main loop
     while(!WindowShouldClose()) {
         // Update variables here
@@ -21,8 +29,10 @@ int main(void){
 
             ClearBackground(BLACK);
             
-            DrawText(TextFormat("Address: %p\n", &myTile), 10, 200, 20, LIGHTGRAY);
-
+            DrawText(TextFormat("Address: %p\n", &myMap), 10, 20, 20, LIGHTGRAY);
+	    DrawText(TextFormat("Size: %d\n", sizeof(myMap)), 10, 60, 20, LIGHTGRAY);
+	    DrawText(TextFormat("TileType myTile: %i\n", myTile.type), 10, 80, 10, WHITE);
+	    printTileMap(myMap, 4, 4);
         EndDrawing();
     }
     CloseWindow();
